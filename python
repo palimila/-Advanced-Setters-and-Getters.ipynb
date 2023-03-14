@@ -1,0 +1,55 @@
+class Human:
+    
+    def __init__(self, first, last, age):
+        self.first = first
+        self.last = last
+        
+        if age >= 0:
+            self._age = age
+        else:
+            self._age = 0
+            
+    def getAge(self):
+        return self._age
+    
+    def setAge(self, newAge):
+        
+        if newAge >= 0:
+            self._age = newAge
+        else:
+            self._age = 0
+a = Human("Rohit", "Kumar", 24)
+a.getAge()
+24
+a.setAge(78)
+a.getAge()
+78
+class Human:
+    
+    def __init__(self, first, last, age):
+        self.first = first
+        self.last = last
+        
+        if age >= 0:
+            self._age = age
+        else:
+            self._age = 0
+            
+    @property
+    def age(self):
+        return self._age
+    
+    @age.setter
+    def age(self, newAge):
+        
+        if newAge >= 0:
+            self._age = newAge
+        else:
+            raise ValueError("Age cannot be negative")
+a = Human("Rohit", "Kumar", 24)
+a.age
+24
+a.age = 75
+a.age
+75
+a.age = -45
